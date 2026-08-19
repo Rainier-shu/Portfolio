@@ -74,3 +74,34 @@ Desktop.ini
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Unity (generated / local-only)
+[Ll]ibrary/
+[Tt]emp/
+[Uu]ser[Ss]ettings/
+[Bb]uild/
+[Bb]uilds/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+[Aa]ssets/Plugins/Editor/JetBrains*
+ExportedObj/
+.consulo/
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+[Aa]ssets/[Ss]treamingAssets/aa.meta
+[Aa]ssets/[Ss]treamingAssets/aa/*
