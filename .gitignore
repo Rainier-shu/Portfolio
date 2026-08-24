@@ -17,6 +17,8 @@
 *.snupkg
 **/[Pp]ackages/*
 !**/[Pp]ackages/build/
+!**/[Pp]ackages/manifest.json
+!**/[Pp]ackages/packages-lock.json
 *.nuget.props
 *.nuget.targets
 project.lock.json
@@ -29,7 +31,6 @@ artifacts/
 *.exe
 *.pdb
 *.ilk
-*.meta
 *.obj
 *.iobj
 *.pch
@@ -76,6 +77,8 @@ Desktop.ini
 *.sln.iml
 
 # Unity (generated / local-only)
+[Aa]ssembly-*.csproj
+*.slnx
 [Ll]ibrary/
 [Tt]emp/
 [Uu]ser[Ss]ettings/
