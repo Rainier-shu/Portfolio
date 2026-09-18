@@ -17,7 +17,7 @@ public class Life : MonoBehaviour
     }
 
     /// <summary>
-    /// 依附的GameObject对象每次激活时调用
+    /// 脚本每次激活时调用
     /// </summary>
     void OnEnable()
     {
@@ -25,7 +25,7 @@ public class Life : MonoBehaviour
     }
 
     /// <summary>
-    /// 第一次帧率更新之前调用
+    /// 在脚本第一次激活后于该帧更新之前调用
     /// 一个对象只会调用一次
     /// </summary>
     void Start()
@@ -61,7 +61,7 @@ public class Life : MonoBehaviour
     }
 
     /// <summary>
-    /// 依附的GameObject对象每次失活时调用
+    /// 脚本每次失活时调用
     /// </summary>
     void OnDisable()
     {
