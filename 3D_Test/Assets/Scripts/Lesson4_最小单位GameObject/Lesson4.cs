@@ -101,6 +101,7 @@ public class Lesson4 : MonoBehaviour
         #endregion
 
         #region GameObject中的成员方法
+        #region 主要方法
         //创建空物体
         //第一个参数为对象名；第二个参数为变长的Type，代表添加的脚本；
         GameObject obj6 = new GameObject();
@@ -128,7 +129,37 @@ public class Lesson4 : MonoBehaviour
         {
             print("当前游戏对象的标签为Player");
         }
+
+        //设置激活状态
+        //true为激活；false为失活
+        obj6.SetActive(false);
+        obj7.SetActive(false);
+        obj8.SetActive(false);
         #endregion
+
+        #region 次要方法，由于效率低而不建议使用
+        //通过广播或发送消息的形式让自己或别人执行某些方法
+        //会找到指定GameObject依附的所有脚本中满足条件的方法执行
+        gameObject.SendMessage("TestFunc");
+        gameObject.SendMessage("TestFunc_2", 99);
+
+        //向自己以及子对象广播以执行满足条件的方法
+        //gameObject.BroadcastMessage("函数名");
+
+        //向自己以及父对象发送消息以执行满足条件的方法
+        //gameObject.SendMessageUpwards("函数名");
+        #endregion
+        #endregion
+    }
+
+    public void TestFunc()
+    {
+        print("Lesson4的广播");
+    }
+
+    public void TestFunc_2(int a)
+    {
+        print("Lesson4的广播" + a);
     }
 
     // Update is called once per frame
