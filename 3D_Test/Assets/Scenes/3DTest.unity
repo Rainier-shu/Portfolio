@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lesson4_2_1
   Tank: {fileID: 7998938558149163892, guid: c6dec6ad602d0024ebbc1041f4c38a62, type: 3}
+  ActionGO: {fileID: 1615337647}
+  ActNow: 0
 --- !u!4 &83153306
 Transform:
   m_ObjectHideFlags: 0
