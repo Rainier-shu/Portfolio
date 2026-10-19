@@ -75,6 +75,24 @@ public class Lesson6_ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region 位移
+        //自己计算
+        //路程=方向*速度*时间
+        //向自己面朝向的方向以1单元/s的速度移动(游戏时间)
+        //transform.position += transform.forward * 1 * Time.deltaTime;
+        //向世界坐标的z轴正方向以1单元/s的速度移动(游戏时间)
+        //transform.position += Vector3.forward * 1 * Time.deltaTime;
 
+        //Api计算
+        //此方法第二个参数默认为自身坐标系
+        //基于自身坐标系，往其面朝向移动(向本地Z轴正方向移动)
+        //transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+        //基于世界坐标系，往其面朝向移动(向世界Z轴正方向移动)
+        //transform.Translate(Vector3.forward * 1 * Time.deltaTime, Space.World);
+        //基于自身坐标系，往自身坐标系相对世界坐标系的方向移动(移动轨迹难料，基本不会用)
+        //transform.Translate(transform.forward * 1 * Time.deltaTime, Space.Self);
+        //基于世界坐标系，往自身坐标系相对世界坐标系的方向移动(向自身面朝向移动)
+        transform.Translate(transform.forward* 1 * Time.deltaTime, Space.World);
+        #endregion
     }
 }
