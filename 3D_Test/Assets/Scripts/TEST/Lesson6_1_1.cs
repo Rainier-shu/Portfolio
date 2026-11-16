@@ -14,6 +14,9 @@ public class Lesson6_1_1 : MonoBehaviour
         for (int k = 0; k < layers; k++) // k = 层数（从顶层0开始）
         {
             int count = k + 1; // 每行/列的数量
+            //索引为几何体的中心
+            //不考虑偏移时,每层的最大索引为count-1,其中心索引就为(count-1)/2
+            //当前框架下每层的中心索引应该为0，就需要每个集合体的索引x、z轴都减去中心索引的距离
             float offset = count / 2f - 0.5f; // 居中偏移
 
             for (int i = 0; i < count; i++) // X 轴
