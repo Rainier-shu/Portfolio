@@ -98,9 +98,70 @@ public class Lesson11 : MonoBehaviour
 
         //Input.GetAxisRaw:返回-1,0,1；用法与Input.GetAxis基本一致
         //键盘返回为-1,0,1
-        print("键盘AD:" + Input.GetAxisRaw("Horizontal"));
+        //print("键盘AD:" + Input.GetAxisRaw("Horizontal"));
         //鼠标返回依旧有小数且不限制范围，但比GetAxis少一些因素计算，相对延迟会低点
-        print("鼠标纵向移动:" + Input.GetAxisRaw("Mouse Y"));
+        //print("鼠标纵向移动:" + Input.GetAxisRaw("Mouse Y"));
+        #endregion
+
+        #region 其它
+        //是否有任意键或鼠标长按
+        if (Input.anyKey)
+        {
+            //print("有一个键长按");
+        }
+
+        //是否有任意键或鼠标按下
+        if (Input.anyKeyDown)
+        {
+            //print("有一个键按下");
+
+            //这一帧的键盘输入，配合Input.anyKeyDown可用于改键
+            print($"输入键：{Input.inputString}");
+        }
+
+        //手柄输入相关
+        //得到连接手柄的所有按钮名字,用于检测手柄按下API的入参
+        string[] strs = Input.GetJoystickNames();
+
+        //检测手柄键长按
+        if (Input.GetButton("Jump"))
+        {
+        }
+
+        //检测手柄键按下
+        if (Input.GetButtonDown("Jump"))
+        {
+        }
+
+        //检测手柄键抬起
+        if (Input.GetButtonUp("Jump"))
+        {
+        }
+
+        //移动设备触摸相关
+        if (Input.touchCount > 0)
+        {
+            Touch t1 = Input.touches[0];
+            //位置
+            print(t1.position);
+            //相对上次位置的变化
+            print(t1.deltaPosition);
+        }
+
+        //是否启用多点触控
+        Input.multiTouchEnabled = true;
+
+        //陀螺仪(重力感应)
+        //适用场景举例：
+        //依据手机摇晃旋转让场景上3D物体模拟受到重力转动的效果
+        //是否开启陀螺仪
+        Input.gyro.enabled = true;
+        //重力加速度向量
+        print(Input.gyro.gravity);
+        //旋转速度
+        print(Input.gyro.rotationRate);
+        //当前的旋转四元数
+        print(Input.gyro.attitude);
         #endregion
     }
 }
