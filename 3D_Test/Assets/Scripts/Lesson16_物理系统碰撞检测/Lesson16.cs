@@ -74,4 +74,14 @@ public class Lesson16 : MonoBehaviour
         print($"{this.name}正在与{other.gameObject.name}水乳交融");
     }
     #endregion
+
+    #region 知识点三 要明确什么时候会响应函数
+    //1.只要挂载的对象能和 别的对象 发生碰撞或触发时即可响应对应函数;
+    //2.如果是一个异形物体，刚体在父对象上，若希望其响应函数，则脚本应该挂载到父对象上;
+    #endregion
+
+    #region 知识点四 碰撞和触发函数都可以写成虚函数 在子类去重写逻辑
+    //一般会把想要重写的 碰撞和触发函数 写成保护类型的；没必要写成public，因为都是Unty
+    //通过反射自动调用的
+    #endregion 
 }

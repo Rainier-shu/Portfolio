@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Lesson13_1_1 : MonoBehaviour
 {
+    public GameObject Bullet;
     public Transform Camera;
     public Transform Camera2;
     private Transform Head;
@@ -75,7 +76,18 @@ public class Lesson13_1_1 : MonoBehaviour
         Camera.position = Gun.transform.position;
         Camera2.position = transform.position + Camera2PositionOffset;
 
-        //相机总看此对象
+        //相机总看此对象(现总从炮口看向前方)
         Camera.transform.LookAt(this.Gun.transform.TransformPoint(Vector3.up * 10));
+
+        #region 发射子弹
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject b = GameObject.Instantiate(Bullet);
+            b.name = "Bullet";
+            b.transform.position = Camera.transform.TransformPoint(Vector3.forward * 3);
+            b.transform.eulerAngles = Camera.transform.eulerAngles;
+            b.AddComponent<Lesson16_1_1_Bullet>();
+        }
+        #endregion
     }
 }
